@@ -4,10 +4,11 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import java.io.File;
-
 import org.springframework.boot.ApplicationArguments;
 import sg.edu.nus.iss.day13wkshp.services.DatabaseService;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import java.io.File;
 
 @SpringBootApplication
 public class Day13wkshpApplication implements ApplicationRunner {
@@ -21,7 +22,7 @@ public class Day13wkshpApplication implements ApplicationRunner {
 
 	@Override
 	public void run(ApplicationArguments args)  {
-		if (args.containsOption("dataDir") {
+		if (args.containsOption("dataDir")) {
 			final String dataDir = args.getOptionValues("dataDir").get(0);
 			dbSvc.setDataDir(new File(dataDir));
 
@@ -36,12 +37,4 @@ public class Day13wkshpApplication implements ApplicationRunner {
 		}
 	}
 
-	public boolean save() {
-		return false;
-	}
-
-	public void read(String fileId) {
-
-
-	}
 }
